@@ -56,6 +56,24 @@ describe('app routes', () => {
             });
     });
 
+    it('can get a single trip', async() => {
+        const trip = await Trip.create({
+            name: 'Beach Trip!',
+            location: 'Manzanita, OR'
+        });
+
+        return request(app)
+            .get(`/api/v1/trips/${trip._id}`)
+            .then(res => {
+                expect(res.body).toEqual({
+                    _id: expect.any(String),
+                    name: 'Beach Trip!',
+                    location: 'Manzanita, OR',
+                    __v: 0
+                });
+            });
+    });
+
     it('updates a trip by id', async() => {
         const trip = await Trip.create({
             name: 'Winter vaca',
@@ -63,7 +81,7 @@ describe('app routes', () => {
         });
 
         return request(app)
-            .patch(`/api/v1/recipes/${trip._id}`)
+            .patch(`/api/v1/trips/${trip._id}`)
             .send({ name: 'I just live here...' })
             .then(res => {
                 expect(res.body).toEqual({
