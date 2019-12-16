@@ -92,4 +92,23 @@ describe('app routes', () => {
                 });
             });
     });
+
+    it('can delete a trip', async() => {
+        const trip = await Trip.create({
+            name: 'Canada Trip',
+            location: 'Mexico!'
+        });
+
+        return request(app)
+            .del(`/api/v1/trips/${trip._id}`)
+            .then(res => {
+                expect(res.body).toEqual({
+                    _id: expect.any(String),
+                    name: 'Canada Trip',
+                    location: 'Mexico!',
+                    __v: 0
+                });
+            });
+    });
+
 });
