@@ -35,4 +35,24 @@ describe('app routes', () => {
                 });
             });
     });
+
+    it('gets all trips', async() => {
+        const trips = await Trip.create([
+            { name: 'Trip 1', location: 'London' },
+            { name: 'Trip 2', location: 'Seattle, WA' },
+            { name: 'Trip 3', location: 'New York, NY' },
+        ]);
+
+        return request(app)
+            .get('/api/v1/trips')
+            .then(res => {
+                trips.forEach(trip => {
+                    expect(res.body).toContainEqual({
+                        _id: trip._id.toString(),
+                        name: trip.name,
+                        location: trip.location
+                    });
+                });
+            });
+    });
 });
