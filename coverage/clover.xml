@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1576538661351" clover="3.2.0">
-  <project timestamp="1576538661352" name="All files">
-    <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6" elements="15" coveredelements="15" complexity="0" loc="9" ncloc="9" packages="1" files="1" classes="1"/>
+<coverage generated="1576538812219" clover="3.2.0">
+  <project timestamp="1576538812219" name="All files">
+    <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8" elements="19" coveredelements="19" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
     <file name="trips.js" path="/Users/joelpatrickdurham/alchemy/career-track/week-03/travel-manager/lib/routes/trips.js">
-      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
@@ -13,6 +13,8 @@
       <line num="15" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
