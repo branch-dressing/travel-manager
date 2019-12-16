@@ -55,4 +55,23 @@ describe('app routes', () => {
                 });
             });
     });
+
+    it('updates a trip by id', async() => {
+        const trip = await Trip.create({
+            name: 'Winter vaca',
+            location: 'Portland, OR'
+        });
+
+        return request(app)
+            .patch(`/api/v1/recipes/${trip._id}`)
+            .send({ name: 'I just live here...' })
+            .then(res => {
+                expect(res.body).toEqual({
+                    _id: expect.any(String),
+                    name: 'I just live here...',
+                    location: 'Portland, OR',
+                    __v: 0
+                });
+            });
+    });
 });
