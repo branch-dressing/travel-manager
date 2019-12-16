@@ -102,12 +102,13 @@ describe('app routes', () => {
         return request(app)
             .del(`/api/v1/trips/${trip._id}`)
             .then(res => {
-                expect(res.body).toEqual({
+                expect(res.body).toEqual([{
                     _id: expect.any(String),
                     name: 'Canada Trip',
                     location: 'Mexico!',
                     __v: 0
-                });
+                },
+                { deletedCount: 0, n: 0, ok: 1 }]);
             });
     });
 
