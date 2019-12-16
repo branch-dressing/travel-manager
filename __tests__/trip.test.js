@@ -6,7 +6,7 @@ const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
 const Trip = require('../lib/models/Trip');
 
-describe.skip('app routes', () => {
+describe('app routes', () => {
     beforeAll(() => {
         connect();
     });
@@ -31,8 +31,6 @@ describe.skip('app routes', () => {
                     _id: expect.any(String),
                     name: 'My first Trip',
                     location: 'Portland, OR',
-                    latitude: expect.any(Number),
-                    longitude: expect.any(Number),
                     __v: 0
                 });
             });
