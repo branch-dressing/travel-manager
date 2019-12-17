@@ -20,7 +20,7 @@ describe('itinerary routes', () => {
         return mongoose.connection.close();
     });
 
-    it('creates an itinerary item with the weather', async() => {
+    it.skip('creates an itinerary item with the weather', async() => {
         const date = new Date('December 17, 2019 03:24:00');
         const trip = await Trip.create({ name: 'First trip', location: 'Portland' });
         return request(app)
