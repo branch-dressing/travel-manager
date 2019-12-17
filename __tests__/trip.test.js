@@ -24,13 +24,13 @@ describe('app routes', () => {
             .post('/api/v1/trips')
             .send({
                 name: 'My first Trip',
-                location: 'Portland, OR'
+                location: 'Portland'
             })
             .then(res => {
                 expect(res.body).toEqual({
                     _id: expect.any(String),
                     name: 'My first Trip',
-                    location: 'Portland, OR',
+                    location: 'Portland',
                     __v: 0
                 });
             });
